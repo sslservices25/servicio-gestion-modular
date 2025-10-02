@@ -25,6 +25,11 @@ export async function POST(request: NextRequest) {
       );
     }
     
+    // ⬇️ INSERTE LAS LÍNEAS DE DEPURACIÓN AQUÍ ⬇️
+    console.log('DEBUG 1 (Usuario Completo):', user);
+    console.log('DEBUG 2 (Campo Hash):', user.passwordHash);
+    // ⬆️ DEPURACIÓN AÑADIDA ⬆️
+
     // Verificar si el usuario está activo
     if (!user.activo) {
       return NextResponse.json(
